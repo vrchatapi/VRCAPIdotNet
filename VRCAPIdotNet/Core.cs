@@ -18,6 +18,7 @@ using VRCAPIdotNet.VRCAPI.Responses;
 using VRCAPIdotNet.VRCAPI;
 using static VRCAPIdotNet.VRCAPI.Dependencies;
 using System.IO;
+using System.Diagnostics;
 
 namespace VRCAPIdotNet
 {
@@ -32,7 +33,29 @@ namespace VRCAPIdotNet
 
         public static void Main(string[] args)
         {
+            SetConsoleUTF8();
             new Core().MainAsync().GetAwaiter().GetResult();
+        }
+
+        public static void SetConsoleUTF8()
+        {
+            Console.WriteLine("Setting console output to UTF-8");
+            var cmd = new Process
+            {
+                StartInfo = {
+                    FileName = "cmd.exe",
+                    RedirectStandardInput = true,
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = true,
+                    UseShellExecute = false
+                }
+            };
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine("chcp 65001");
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            Console.OutputEncoding = Encoding.UTF8;
         }
 
         public async Task MainAsync()
