@@ -1,19 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Reflection;
-using System.Net;
-using System.Net.Http;
-using System.Web;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-
-using VRCAPIdotNet.VRCAPI.Endpoints;
 using VRCAPIdotNet.VRCAPI.Responses;
 using VRCAPIdotNet.VRCAPI;
 using static VRCAPIdotNet.VRCAPI.Dependencies;
