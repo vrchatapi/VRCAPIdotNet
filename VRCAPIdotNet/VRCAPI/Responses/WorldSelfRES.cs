@@ -23,7 +23,7 @@ namespace VRCAPIdotNet.VRCAPI.Responses
         public string assetUrl { get; set; }
         public string pluginUrl { get; set; }
         public string unityVersion { get; set; }
-        public int unitySortNumber { get; set; }
+        public int64 unitySortNumber { get; set; }
         public int assetVersion { get; set; }
         public string platform { get; set; }
         [JsonProperty(PropertyName = "created_at")]
